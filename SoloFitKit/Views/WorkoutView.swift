@@ -33,7 +33,7 @@ struct WorkoutView: View {
                             exerciseInfoView
                                 .frame(maxWidth: .infinity)
                                 .layoutPriority(1)
-                            animationView
+                           // animationView
                                 .frame(maxWidth: .infinity)
                             controlsView
                                 .frame(maxWidth: .infinity)
@@ -259,37 +259,37 @@ struct WorkoutView: View {
         }
     }
     
-    private var animationView: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color("CardBackgroundColor"))
-                .shadow(color: Color.black.opacity(0.06), radius: 12, x: 0, y: 6)
-            
-            VStack(spacing: 16) {
-                // Placeholder for exercise animation
-                ZStack {
-                    Circle()
-                        .fill(Color("AccentColor").opacity(0.1))
-                        .frame(width: 120, height: 120)
-                    
-                    Image(systemName: "figure.strengthtraining.traditional")
-                        .font(.system(size: 48, weight: .medium))
-                        .foregroundColor(Color("AccentColor"))
-                        .scaleEffect(workoutViewModel.isPaused ? 1.0 : 1.1)
-                        .animation(
-                            .easeInOut(duration: 1.0).repeatForever(autoreverses: true),
-                            value: workoutViewModel.isPaused
-                        )
-                }
-                
-                Text("Exercise animation")
-                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                    .foregroundColor(Color("SecondaryTextColor"))
-            }
-            .padding(.vertical, 40)
-        }
-        .frame(height: 200)
-    }
+//    private var animationView: some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 20)
+//                .fill(Color("CardBackgroundColor"))
+//                .shadow(color: Color.black.opacity(0.06), radius: 12, x: 0, y: 6)
+//            
+//            VStack(spacing: 16) {
+//                // Placeholder for exercise animation
+//                ZStack {
+//                    Circle()
+//                        .fill(Color("AccentColor").opacity(0.1))
+//                        .frame(width: 120, height: 120)
+//                    
+//                    Image(systemName: "figure.strengthtraining.traditional")
+//                        .font(.system(size: 48, weight: .medium))
+//                        .foregroundColor(Color("AccentColor"))
+//                        .scaleEffect(workoutViewModel.isPaused ? 1.0 : 1.1)
+//                        .animation(
+//                            .easeInOut(duration: 1.0).repeatForever(autoreverses: true),
+//                            value: workoutViewModel.isPaused
+//                        )
+//                }
+//                
+//                Text("Exercise animation")
+//                    .font(.system(size: 14, weight: .medium, design: .rounded))
+//                    .foregroundColor(Color("SecondaryTextColor"))
+//            }
+//            .padding(.vertical, 40)
+//        }
+//        .frame(height: 200)
+//    }
     
     private var controlsView: some View {
         HStack(spacing: 24) {
